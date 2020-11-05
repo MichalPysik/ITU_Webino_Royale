@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form method="POST">
+    <div class="Login">
+        <p>Choose USER:</p>
+        <select name= names method="GET" action="/">
+            {% for Name in names %}
+                <option value= "{{Name}}" SELECTED>{{Name}}</option>"
+            {% endfor %}
+        </select>
+        <input type="submit" value="Login">
+    </div>
+</form>
+
+<div class="Create">
+    <p>Create USER</p>
+    <a href="/create_user"><button></button></a>
+</div>
+
+</body>
+</html>

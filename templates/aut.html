@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/aut.css">
+    <title>Automat</title>
+</head>
+<body>
+<div class="user_bar">
+    <p class="user_bar_half">USER: {{ user }}</p>
+    <p class="user_bar_half">BALANCE: {{ balance }}</p>
+    <a href="/"><button class="btn_user">Change user</button></a>
+</div>
+<div class="left_menu">
+    <table class="table_left">
+        <tr class="header">
+            <th>Sign</th>
+            <th>Win</th>
+        </tr>
+        {% for sign in signs %}
+        <tr>
+            <td class=""> {{ sign[0] }}</td>
+            <td> {{ sign[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="Top">
+    <h1 class="Nadpis">AUTOMAT</h1>
+</div>
+<div class="middle">
+    <div class="Slots">
+        {% for slot in Slots %}
+            <img alt="Slot" class="slot" src={{ slot }} >
+        {% endfor %}
+    </div>
+    <div class="middle_down">
+        <form method="POST">
+            <label>BET:</label>
+            <input class="aut_bet" type="text" value="{{ bet }}" name="bet"><br>
+            <input class="btn_play" type="submit" value="PLAY">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

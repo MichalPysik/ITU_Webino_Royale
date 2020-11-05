@@ -1,0 +1,111 @@
+body {
+    background: url("/static/SKINS/automat_background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    min-width:810px;
+    margin: 0;
+}
+
+.Slots{
+    border: 5px double rgba(126,26,27,1);
+    background-color: rgba(165,125,0,0.7);
+    padding: 20px 10px 20px 10px;
+    width: 810px;
+    height: 410px;
+}
+.slot{
+    margin: 0 5px 0 5px;
+    border: 3px double rgb(126, 26, 27);
+}
+
+.middle{
+    background-color: rgba(255,215,0,0.85);
+    border: 10px solid black;
+    min-height: 600px;
+    width: 840px;
+    padding: 40px;
+    margin: auto;
+    border-radius: 3%;
+}
+.middle_down{
+    margin: auto;
+    height: 100px;
+    width: 300px;
+}
+.aut_bet{
+    margin-top: 40px;
+    border: 3px solid rgba(0,0,0,1);
+    width: 150px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+}
+.btn_play{
+    margin-top: 20px;
+    border: 3px solid rgba(0,0,0,1);
+    height: 40px;
+    width: 400px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 20%;
+}
+.btn_play:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+.Nadpis{
+    font-family: Serif;
+    font-size: 100px;
+    margin: auto;
+    color: rgba(255,215,0,1);
+}
+.Top{
+    -webkit-text-stroke: 2px black;
+    text-align: center;
+    margin: auto;
+}
+.left_menu{
+    position: fixed;
+    width: 180px;
+    min-height: 500px;
+    background-color: rgba(255,215,0,0.85);
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+}
+.header{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.table_left{
+    width: 180px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.1);
+    border-bottom: 5px solid black;
+}
+
+.user_bar{
+    position: fixed;
+    background-color: rgba(255,215,0,0.85);
+    width: 180px;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    display: block;
+}
+.user_bar_half{
+    height: 20px;
+    width: 180px;
+    margin: 0;
+}
+.btn_user{
+    width: 180px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: medium;
+}
+.btn_user:hover{
+    background-color: rgba(0,0,0,0.8);
+}

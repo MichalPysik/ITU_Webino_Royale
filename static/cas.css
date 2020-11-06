@@ -60,13 +60,13 @@ h1{
 
 .user_bar{
     position: fixed;
-    background-color: rgba(255,215,0,0.85);
+    background-color: rgba(50,195,50,0.85);
     width: 180px;
     height: 100px;
     bottom: 0;
     left: 0;
-    border-top: 5px solid black;
-    border-right: 5px solid black;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
     display: block;
 }
 .user_bar_half{
@@ -77,7 +77,7 @@ h1{
 .btn_user{
     width: 180px;
     height: 30px;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.3);
     border: none;
     color: white;
     font-size: medium;

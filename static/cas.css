@@ -1,13 +1,87 @@
+body {
+    background-image: url('/static/SKINS/main_menu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    background-position: center;
+}
+
 .casino_btn{
     height: 200px;
     width: 200px;
 }
 h1{
-    font-size: 40px;
+    font-size: 80px;
     text-align: center;
+    color: white;
+    -webkit-text-stroke: 2px orange;
+}
+.buttons_container{
+    width: 100%;
+    position: fixed;
+    bottom: 30px;
 }
 .buttons{
     margin: auto;
     width: 660px;
     text-align: center;
+}
+
+#btn1 {
+    background-image: url('/static/SKINS/ruleta_icona.png');
+    background-size: 100%;
+}
+
+#btn1:hover{
+    background-image: url('/static/SKINS/ruleta_icona_hover.png');
+    background-size: 100%;
+}
+
+#btn2 {
+    background-image: url('/static/SKINS/dices_icona.png');
+    background-size: 100%;
+}
+
+#btn2:hover{
+    background-image: url('/static/SKINS/dices_icona_hover.png');
+    background-size: 100%;
+}
+
+#btn3 {
+    background-image: url('/static/SKINS/slots_icona.png');
+    background-size: 100%;
+}
+
+#btn3:hover{
+    background-image: url('/static/SKINS/slots_icona_hover.png');
+    background-size: 100%;
+}
+
+.user_bar{
+    position: fixed;
+    background-color: rgba(255,215,0,0.85);
+    width: 180px;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    display: block;
+}
+.user_bar_half{
+    height: 20px;
+    width: 180px;
+    margin: 0;
+}
+.btn_user{
+    width: 180px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: medium;
+}
+.btn_user:hover{
+    background-color: rgba(0,0,0,0.8);
 }

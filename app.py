@@ -43,7 +43,8 @@ def Create_user():
 
 @app.route('/casino', methods=["GET"])
 def casino_menu():
-    return render_template('cas.html')
+    global us
+    return render_template('cas.html', user=us.get_name(), balance=us.get_balance())
 
 @app.route('/casino/Ruleta')
 def Ruleta():

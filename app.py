@@ -2,6 +2,7 @@ from flask import Flask, request, redirect, render_template
 import user
 from automat import automat
 from Automat import automat_class
+from dice import dice
 from time import sleep
 
 app = Flask(__name__, template_folder='templates')
@@ -50,9 +51,33 @@ def casino_menu():
 def Ruleta():
     return "<h1>Ruleta</h1>"
 
-@app.route('/casino/Kostky')
-def Kostky():
-    return "<h1>Kostky</h1>"
+@app.route('/casino/Dice', methods=["GET", "POST"])
+def Dice():
+    global us
+    global bet
+    global Users
+    bet = 1
+    gStatus = 30
+    NoD = 1
+    pSum = 0
+    eSum = 0
+    pThws = [1, 1, 1, 1, 1, 1]
+    eThws = [2, 2, 2, 2, 2, 2]
+    helpTMP = []
+    if request.method == 'POST':
+        if us.get_balance() <= 0:
+            Users.remove(us)
+            us.delete()
+            return redirect('/casino/lose')
+        bet = int(request.form['bet'])
+        NoD = int(request.form['nOfDice'])
+        gStatus, pSum, eSum, pThws, eThws = dice(us, bet, NoD)
+    for i in range (0, NoD):
+        helpTMP.append(i)
+    strP="/static/SKINS/DICE/" + str(pThws[NoD-1]) + "yellow.png"
+    strE="/static/SKINS/DICE/" + str(eThws[NoD-1]) + "red.png"
+    print(us.get_balance())
+    return render_template('dice.html', bet=bet, user=us.get_name(), balance=us.get_balance(), helpTMP=helpTMP, imaP=strP, imaE=strE, gStatus=gStatus, pSum=pSum, eSum=eSum, pThws=pThws, eThws=eThws)
 
 @app.route('/casino/Automat', methods=["GET", "POST"])
 def Automat():

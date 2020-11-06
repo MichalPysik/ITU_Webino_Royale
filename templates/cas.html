@@ -7,10 +7,21 @@
 </head>
 <body>
 <h1>CASINO ROYALE</h1>
+<div class="buttons_container">
 <div class="buttons">
-    <a href=/casino/Ruleta><button class=casino_btn>Ruleta</button></a>
-    <a href=/casino/Dice><button class=casino_btn>Dice</button></a>
-    <a href=/casino/Automat><button class=casino_btn>Automat</button></a>
+
+    <a href=/casino/Ruleta><button id="btn1" class=casino_btn></button></a>
+    <a href=/casino/Kostky><button id="btn2" class=casino_btn></button></a>
+    <a href=/casino/Automat><button id="btn3" class=casino_btn></button></a>
+</div>
+</div>
+
+<div class="user_bar">
+    <p class="user_bar_half">USER: {{ user }}</p>
+    <p class="user_bar_half">BALANCE: {{ balance }}</p>
+    <a href="/"><button class="btn_user">Back to menu</button></a>
+    <a href="/"><button class="btn_user">Change user</button></a>
+
 </div>
 </body>
 </html>

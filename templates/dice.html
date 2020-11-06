@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/dice.css">
+    <title>Dice</title>
+</head>
+
+<body>
+<div class="user_bar">
+    <p class="user_bar_half">USER: {{ user }}</p>
+    <p class="user_bar_half">BALANCE: {{ balance }}</p>
+    <a href="/"><button class="btn_user">Change user</button></a>
+</div>
+<div class="Top">
+    <h1 class="Nadpis">DICE</h1>
+</div>
+
+<div class="diceTableSide">
+    <table class="diceTable">
+        <tr class="header">
+            <th>Throw number</th>
+            <th>{{ user }}</th>
+            <th>Enemy</th>
+        </tr>
+        {% for i in helpTMP %}
+        <tr>
+            <th>{{ i+1 }}</th>
+            <th>{{ pThws[i] }}</th>
+            <th>{{ eThws[i] }}</th>
+        </tr>
+        {% endfor %}
+        <tr class="ender">
+            <th>Total</th>
+            <th>{{ pSum }}</th>
+            <th>{{ eSum }}</th>
+        </tr>
+    </table>
+</div>
+
+<div class="middle">
+    <div class="textOverDice">
+        <strong style="width: 50%; float:left" class="pName">{{ user }}</strong>
+        <strong style="width: 50%; float:right" class="eName">Enemy</strong>
+    </div>
+    <div class="shownDice">
+        <img alt="dicePlayer" class="dicePic" src={{ imaP }} >
+        <img alt="diceEnemy" class="dicePic" src={{ imaE }} >
+    </div>
+    <div class="middle_down">
+        <form method="POST">
+            <label class="betText">BET:</label>
+            <input class="dice_bet" type="text" value="{{ bet }}" name="bet"><br>
+            <input class="btn_throw" type="submit" value="THROW"><br><br>
+            <input class="radioBox" type="radio" id="1" name="nOfDice" value="1" checked>
+            <label class="radioSel" for="1">1 Die</label><br>
+            <input class="radioBox" type="radio" id="2" name="nOfDice" value="2">
+            <label class="radioSel" for="2">2 Dice</label><br>
+            <input class="radioBox" type="radio" id="3" name="nOfDice" value="3">
+            <label class="radioSel" for="3">3 Dice</label><br>
+            <input class="radioBox" type="radio" id="4" name="nOfDice" value="4">
+            <label class="radioSel" for="4">4 Dice</label><br>
+            <input class="radioBox" type="radio" id="5" name="nOfDice" value="5">
+            <label class="radioSel" for="5">5 Dice</label><br>
+            <input class="radioBox" type="radio" id="6" name="nOfDice" value="6">
+            <label class="radioSel" for="6">6 Dice</label><br>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

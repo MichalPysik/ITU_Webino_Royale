@@ -20,7 +20,7 @@ body {
 
 .user_bar{
     position: fixed;
-    background-color: rgba(255,215,0,0.85);
+    background-color: rgba(255,30,0,0.85);
     width: 180px;
     height: 100px;
     bottom: 0;
@@ -33,10 +33,11 @@ body {
     height: 20px;
     width: 180px;
     margin: 0;
+    color: black;
 }
 .btn_user{
     width: 180px;
-    height: 60px;
+    height: 30px;
     background-color: rgba(0,0,0,0.6);
     border: none;
     color: white;

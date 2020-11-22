@@ -39,6 +39,25 @@
     </table>
 </div>
 
+{% if gStatus == 0 %}
+<div class="alertWin">
+	<span class="closeAlert" onclick="this.parentElement.style.display='none';">&times;</span>
+	<strong>Congratulations {{ user }},<br>you have just won {{ bet }} credit(s)!</strong>
+</div>
+{% endif %}
+{% if gStatus == 1 %}
+<div class="alertLose">
+	<span class="closeAlert" onclick="this.parentElement.style.display='none';">&times;</span>
+	<strong>Unfortunately {{ user }},<br>you have just lost {{ bet }} credit(s)</strong>
+</div>
+{% endif %}
+{% if gStatus == 2 %}
+<div class="alertTie">
+	<span class="closeAlert" onclick="this.parentElement.style.display='none';">&times;</span>
+	<strong>It's a draw,<br>your balance stays the same</strong>
+</div>
+{% endif %}
+
 <div class="middle">
     <div class="textOverDice">
         <strong style="width: 50%; float:left" class="pName">{{ user }}</strong>

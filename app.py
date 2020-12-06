@@ -34,7 +34,7 @@ def Create_user():
         us = request.form['login']
         for i in Users:
             if i.get_name() == us:
-                return "User already added"
+                return redirect("/")
         Users.append(user.User(us))
         return redirect("/")
 

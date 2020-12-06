@@ -1,8 +1,9 @@
 from flask import Flask, request, redirect, render_template
 import user
-from automat import automat
+from aautomat import automat
 from Automat import automat_class
 from dice import dice
+from ruleta import ruleta
 from time import sleep
 
 app = Flask(__name__, template_folder='templates')
@@ -45,11 +46,38 @@ def Create_user():
 @app.route('/casino', methods=["GET"])
 def casino_menu():
     global us
+    global bet
+    global Users
     return render_template('cas.html', user=us.get_name(), balance=us.get_balance())
 
-@app.route('/casino/Ruleta')
+@app.route('/casino/Ruleta', methods=["GET", "POST"])
 def Ruleta():
-    return "<h1>Ruleta</h1>"
+    global us
+    global bet
+    global Users
+    global choice
+    rul_red = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36]
+    rul_black = [2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35]
+    choice = "red"
+    bet = 1
+    rul_result = 4
+    rul_result_c = "red"
+    if request.method == 'POST':
+        if us.get_balance() <= 0:
+            Users.remove(us)
+            us.delete()
+            return redirect('/casino/lose')
+        bet = int(request.form['bet'])
+        choice = str(request.form['choice'])
+        rul_result = ruleta(us, bet, choice)
+        if rul_result in rul_red:
+            rul_result_c = "red"
+        elif rul_result in rul_black:
+            rul_result_c = "black"
+        else:
+            rul_result_c = "green"
+    print(us.get_balance())
+    return render_template('rul.html', bet=bet, choice=choice, user=us.get_name(), balance=us.get_balance(), result=rul_result, rul_result_c=rul_result_c)
 
 @app.route('/casino/Dice', methods=["GET", "POST"])
 def Dice():

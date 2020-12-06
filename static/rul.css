@@ -1,0 +1,240 @@
+body {
+    background: url("/static/SKINS/roulette_bg.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    min-width:810px;
+    margin: 0;
+}
+
+.Nadpis{
+    font-family: Serif;
+    font-size: 100px;
+    margin: auto;
+    color: rgba(0,41,66,1);
+}
+.Top{
+    -webkit-text-stroke: 2px black;
+    text-align: center;
+    left: 50%;
+}
+
+.header{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.user_bar{
+    position: fixed;
+    background-color: rgba(0,41,66,0.85);
+    width: 180px;
+    height: 130px;
+    bottom: 0;
+    left: 0;
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    display: block;
+}
+.user_bar_half{
+    color: rgb(255,255,255);
+    height: 20px;
+    width: 180px;
+    margin: 0;
+}
+.btn_user{
+    width: 180px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+}
+.btn_user:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: rgba(0,41,66,0.85);
+  color: white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.result{
+    margin: auto;
+    margin-bottom: 10%;
+    display: table;
+    height: 70px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.middle{
+    padding-top: 5%;
+    height: 600px;
+    width: 840px;
+    margin: auto;
+}
+
+.rectangle {
+  height: 70px;
+  width: 70px;
+  border-radius: 8px;
+  color: white;
+}
+
+.rectangle[data-color="red"] {
+ background-color : rgb(204, 0, 0);
+}
+
+.rectangle[data-color="black"] {
+ background-color : rgb(64, 64, 64);
+}
+
+.rectangle[data-color="green"] {
+ background-color : green;
+}
+
+.choice_zone{
+    margin: auto;
+    padding-right: 60px;
+    width: 780px;
+    height: 200px;
+    margin: auto;
+}
+
+#left{
+    margin-top:40px;
+    float:left;
+    font-size: 0;
+}
+
+#center{
+    float: right;
+    font-size: 0;
+}
+
+
+.btn_choice{
+    border: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn_green{
+    background-color: green;
+    height: 120px;
+    width: 60px;
+}
+
+.btn_green:hover{
+    background-color: rgb(0, 204, 0);
+}
+
+.btn_red{
+    background-color: rgb(204, 0, 0);
+    height: 40px;
+    width: 60px;
+}
+.btn_red:hover{
+    background-color: rgb(255, 26, 26)
+}
+
+.btn_black{
+    background-color: rgb(64, 64, 64);
+    height: 40px;
+    width: 60px;
+}
+
+.btn_white{
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    width: 60px;
+}
+
+.btn_green_text{
+    color: green;
+}
+
+.btn_red_text{
+    color: rgb(204, 0, 0);
+}
+
+.btn_black_text{
+    color: rgb(64, 64, 64);
+}
+
+.btn_white:hover{
+    background-color: rgb(204, 204, 204);
+
+}
+.btn_black:hover{
+    background-color: rgb(128, 128, 128)
+}
+
+.choice_top{
+    margin-left: 300px;
+}
+.choice_bottom{
+    margin-left: 300px;
+}
+
+.bet_choice{
+    background-color: rgba(0,41,66,0.8);
+    border: 5px solid black;
+    width: 400px;
+    height: 200px;
+    padding-right: 60px;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+}
+.choice_label{
+    color: white;
+}
+.rul_bet{
+    margin-top: 40px;
+    margin-left: 60px;
+    text-align: center;
+}
+.rul_play{
+    margin-left: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.rul_2x{
+    float: right;
+    margin-right: 52px;
+}

@@ -30,7 +30,7 @@ def login():
 @app.route('/create_user', methods=['GET', 'POST'])
 def Create_user():
     global Users
-    if request.method == 'POST':
+    if request.method == 'POST' and 'login' in request.form:
         us = request.form['login']
         for i in Users:
             if i.get_name() == us:
@@ -38,10 +38,7 @@ def Create_user():
         Users.append(user.User(us))
         return redirect("/")
 
-    return '''<form method="POST">
-                    New Name: <input type="text" name="login"><br>
-                    <input type="submit" value="Done"><br>
-              </form>'''
+    return render_template('create.html')
 
 @app.route('/casino', methods=["GET"])
 def casino_menu():

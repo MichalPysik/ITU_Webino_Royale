@@ -2,24 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/login.css">
     <title>Login</title>
 </head>
 <body>
+
+<div class="bckg">
 <form method="POST">
-    <div class="Login">
+
+    <div class="Login flex">
+    <h2>LOGIN</h2>
+        <table>
+        <tr>
+        <td>
         <p>Choose USER:</p>
+        </td>
+        <td>
         <select name= names method="GET" action="/">
             {% for Name in names %}
                 <option value= "{{Name}}" SELECTED>{{Name}}</option>"
             {% endfor %}
         </select>
+        </td>
+        </tr>
+        <tr>
+            <td></td>
+        <td>
         <input type="submit" value="Login">
+        </td>
+        </tr>
+        </table>
     </div>
 </form>
 
-<div class="Create">
-    <p>Create USER</p>
-    <a href="/create_user"><button></button></a>
+<div class="Create flex">
+    <h2>Create user</h2>
+    <table>
+        <tr>
+            <td>
+                <p>Create USER</p>
+            </td>
+            <td>
+                <a href="/create_user"><button>Create</button></a>
+            </td>
+        </tr>
+    </table>
+    <img src="/static/SKINS/take_my_money.png">
+</div>
 </div>
 
 </body>

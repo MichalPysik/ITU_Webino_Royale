@@ -1,0 +1,44 @@
+*{
+    margin: auto;
+    color: white;
+    position: center;
+}
+h1{
+    text-align: center;
+    font-family: Serif;
+    font-size: 100px;
+}
+body{
+    min-height: 100vh;
+    background-color: #36013f;
+    padding-top: 100px;
+}
+input,button,select{
+    min-width: 100px;
+    min-height: 30px;
+    text-align: center;
+    color: black;
+}
+option{
+    color: black;
+}
+div.flex{
+    margin-top: 30px;
+    align-content: center;
+    flex: content-box;
+    width: fit-content;
+}
+h2{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.bckg{
+    background-color: darkmagenta;
+    width: 500px;
+    margin: auto;
+    border: white solid 2px;
+}
+img{
+    height: 300px;
+    width: auto;
+}

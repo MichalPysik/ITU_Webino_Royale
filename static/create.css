@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    font-family: Serif;
+    font-size: 100px;
+}
+div{
+    margin-top: 30px;
+    margin: auto;
+    align-content: center;
+    flex: content-box;
+    width: fit-content;
+}
+input{
+    width: 100px;
+}

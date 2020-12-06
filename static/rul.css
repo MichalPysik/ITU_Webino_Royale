@@ -229,6 +229,7 @@ body {
     margin-top: 40px;
     margin-left: 60px;
     text-align: center;
+    width: 150px;
 }
 .rul_play{
     margin-left: 50px;
@@ -243,7 +244,7 @@ body {
 }
 .rul_2x{
     cursor: pointer;
-    margin-left: 262px;
+    margin-left: 270px;
     height: 20px;
     width: 50px;
     background-color: rgba(0,0,0,0.5);

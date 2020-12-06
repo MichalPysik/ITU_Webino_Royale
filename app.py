@@ -64,9 +64,15 @@ def Ruleta():
             Users.remove(us)
             us.delete()
             return redirect('/casino/lose')
+        win_check = us.get_balance()
         bet = int(request.form['bet'])
-        choice = str(request.form['choice'])
+        choice = request.form['hidden_choice']
+        if choice.isnumeric():
+            choice = int(choice)
         rul_result = ruleta(us, bet, choice)
+
+        if us.get_balance() > win_check:
+            flash("YOU WON")
         if rul_result in rul_red:
             rul_result_c = "red"
         elif rul_result in rul_black:
@@ -74,7 +80,7 @@ def Ruleta():
         else:
             rul_result_c = "green"
     print(us.get_balance())
-    return render_template('rul.html', bet=bet, choice=choice, user=us.get_name(), balance=us.get_balance(), result=rul_result, rul_result_c=rul_result_c)
+    return render_template('rul.html', choice=choice, bet=bet, user=us.get_name(), balance=us.get_balance(), result=rul_result, rul_result_c=rul_result_c)
 
 @app.route('/casino/Dice', methods=["GET", "POST"])
 def Dice():
@@ -125,8 +131,7 @@ def Automat():
 
 @app.route('/casino/lose', methods=["GET"])
 def lose():
-    sleep(1)
-    return redirect('/')
+    return render_template('lose.html')
 
 if __name__ == '__main__':
     app.run(debug='True')

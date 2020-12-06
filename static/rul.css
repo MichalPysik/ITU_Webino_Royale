@@ -222,6 +222,7 @@ body {
     text-align: center;
 }
 .choice_label{
+    padding-top: 5px;
     color: white;
 }
 .rul_bet{

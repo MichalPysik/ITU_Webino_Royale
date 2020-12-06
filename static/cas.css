@@ -10,6 +10,7 @@ body {
 .casino_btn{
     height: 200px;
     width: 200px;
+    cursor: pointer;
 }
 #h1{
     font-size: 80px;
@@ -62,7 +63,7 @@ body {
     position: fixed;
     background-color: rgba(50,195,50,0.85);
     width: 180px;
-    height: 130px;
+    height: 100px;
     bottom: 0;
     left: 0;
     border-top: 2px solid white;

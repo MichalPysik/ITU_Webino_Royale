@@ -22,3 +22,6 @@ class automat_class:
 
     def slots_for_HTML(self):
         return [self.Slot1, self.Slot2, self.Slot3]
+
+    def get_status(self):
+        return self.Slots[0] == self.Slots[1] and self.Slots[0] == self.Slots[2]

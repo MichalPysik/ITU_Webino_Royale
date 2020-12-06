@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect, render_template, flash
 import user
 from aautomat import automat
 from Automat import automat_class
@@ -7,6 +7,7 @@ from ruleta import ruleta
 from time import sleep
 
 app = Flask(__name__, template_folder='templates')
+app.secret_key = 'secret key'
 Users = user.get_users()
 us = Users[0]
 bet = 1
@@ -17,7 +18,6 @@ def login():
     global us
     if request.method == 'POST':
         name = request.form['names']
-        print(name)
         for u in Users:
             if u.get_name() == name:
                 us = u
@@ -118,7 +118,8 @@ def Automat():
             return redirect('/casino/lose')
         bet = int(request.form['bet'])
         aut.set_slots(automat(us, bet))
-    print(us.get_balance())
+        if aut.get_status() == True:
+            flash("YOU WON")
     str = aut.slots_for_HTML()
     return render_template('aut.html', Slots=str, bet=bet, signs=signs, balance=us.get_balance(), user=us.get_name())
 

@@ -127,7 +127,27 @@ def Automat():
             Users.remove(us)
             us.delete()
             return redirect('/casino/lose')
+        if request.form['bet'].isnumeric() is False:
+            flash("BET MUST BE NUMBER AND MIN BET IS 1")
+            str = aut.slots_for_HTML()
+            return render_template('aut.html', Slots=str, bet=bet, signs=signs, balance=us.get_balance(),
+                                   user=us.get_name())
         bet = int(request.form['bet'])
+        if bet > 100000:
+            flash("MAX BET IS 100 000")
+            str = aut.slots_for_HTML()
+            return render_template('aut.html', Slots=str, bet=bet, signs=signs, balance=us.get_balance(),
+                                   user=us.get_name())
+        elif bet <= 0:
+            flash("MIN BET IS 1")
+            str = aut.slots_for_HTML()
+            return render_template('aut.html', Slots=str, bet=bet, signs=signs, balance=us.get_balance(),
+                                   user=us.get_name())
+        elif bet > us.get_balance():
+            flash("LOW BALANCE")
+            str = aut.slots_for_HTML()
+            return render_template('aut.html', Slots=str, bet=bet, signs=signs, balance=us.get_balance(),
+                                   user=us.get_name())
         aut.set_slots(automat(us, bet))
         if aut.get_status() == True:
             flash("YOU WON")

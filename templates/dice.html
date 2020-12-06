@@ -12,9 +12,59 @@
     <p class="user_bar_half">BALANCE: {{ balance }}</p>
     <a href="/casino"><button class="btn_user">Back to menu</button></a>
     <a href="/"><button class="btn_user">Change user</button></a>
+    <button class="btn_user" id="modal_btn">Help</button>
 </div>
 <div class="Top">
     <h1 class="Nadpis">DICE</h1>
+</div>
+
+<!-- The Modal -->
+<div id="modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">   
+    <span class="close">&times;</span>
+        <center><h1>HOW TO PLAY DICE</h1></center>
+
+        <h2 style="padding-left: 30px;">DICE RULES</h2>
+
+        <p>Roulette is a classic casino game consisting of a wheel partitioned into the numbers 0-36, and a table on which to
+        place bets.</p>
+
+        <p>Numbers 1-36 on the wheel are coloured red or black, while the 0 is green.</p>
+
+        <p>When a game is played, algorithm selects one of the numbers 0-36, and this will be the winning number.</p>
+
+        <p>Bets are placed on table before the Bet button is clicked, and these bets can be placed on a variety of different
+        outcomes.</p>
+
+        <h2 style="padding-left: 30px;">GAME CONTROLS</h2>
+
+        <p>Click on a specific number, or a betting choice in betting area to place a bet.
+        You can place a bet on any of the active betting fields.</p>
+
+        <p>Select "2x" to double your current bet</p>
+
+        <p>Choice <b>Even</b> includes numbers: 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36</p>
+        <p>Choice <b>Odd</b> includes numbers: 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35</p>
+        <p>Choice <b>Red</b> includes numbers: 1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36</p>
+        <p>Choice <b>Black</b> includes numbers: 2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35</p>
+
+        <h2 style="padding-left: 30px;">BET TYPES</h2>
+
+        <p>You may bet on any of the following:</p>
+
+        <p>- <b>Red</b> pays 1 to 1&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;Win chance: 48.60%</p>
+
+        <p>- <b>Black</b> pays 1 to 1&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;Win chance: 48.60%</p>
+
+        <p>- <b>Even</b> pays 1 to 1&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;Win chance: 48.60%</p>
+
+        <p>- <b>Odd</b> pays 1 to 1&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;Win chance: 48.60%</p>
+
+        <p>- Straight up on any single number pays 35 to 1&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;Win chance: 2.70%</p>
+  </div>
+
 </div>
 
 <div class="diceTableSide">
@@ -88,6 +138,33 @@
     </div>
 </div>
 
+<script>
+// Get the modal
+var modal = document.getElementById("modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("modal_btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>

@@ -65,11 +65,20 @@ def Ruleta():
             us.delete()
             return redirect('/casino/lose')
         win_check = us.get_balance()
-        bet = int(request.form['bet'])
-        choice = request.form['hidden_choice']
-        if choice.isnumeric():
-            choice = int(choice)
-        rul_result = ruleta(us, bet, choice)
+        bet = request.form['bet']
+        if bet.isnumeric():
+            bet = int(bet)
+            if (0 <= bet <= 100000) and (bet <= us.get_balance()):
+                choice = request.form['hidden_choice']
+                if choice.isnumeric():
+                    choice = int(choice)
+                rul_result = ruleta(us, bet, choice)
+            elif (us.get_balance() <= bet):
+                flash("YOUR BET CAN NOT BE HIGHER THAN YOUR BALANCE")
+            else:
+                flash("MINIMUM BET IS 1 AND MAX BET IS 100000")
+        else:
+            flash("BET HAS TO BE NUMBER BETWEEN 1 AND 100000")
 
         if us.get_balance() > win_check:
             flash("YOU WON")

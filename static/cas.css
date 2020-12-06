@@ -120,3 +120,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+.red{
+    color: #9C1A1C;
+    font-size: 22px;
+}

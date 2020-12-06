@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/rul.css">
+    <link rel="icon" type="image/x-icon" href="static/SKINS/favicon.ico" />
     <title>Ruleta</title>
 </head>
 <body>
@@ -81,8 +82,8 @@
         <div id="center">
 
             <div class="choice_top">
-                <input class="btn_choice btn_white btn_green_text" type="submit" onclick="printChoice('Even')" value="Even">
-                <input class="btn_choice btn_white btn_green_text" type="submit" onclick="printChoice('Odd')" value="Odd">
+                <input class="btn_choice btn_white btn_green_text" type="submit" onclick="printChoice('even')" value="Even">
+                <input class="btn_choice btn_white btn_green_text" type="submit" onclick="printChoice('odd')" value="Odd">
             </div>
 
             <div>
@@ -131,8 +132,8 @@
             </div>
 
             <div class="choice_bottom">
-                <input class="btn_choice btn_white btn_red_text" type="submit" onclick="printChoice('Red')" value="Red">
-                <input class="btn_choice btn_white btn_black_text" type="submit" onclick="printChoice('Black')" value="Black">
+                <input class="btn_choice btn_white btn_red_text" type="submit" onclick="printChoice('red')" value="Red">
+                <input class="btn_choice btn_white btn_black_text" type="submit" onclick="printChoice('black')" value="Black">
             </div>
             
         </div>
@@ -146,7 +147,8 @@
                     
                 </div>
                 <form method="POST">
-                    <p class="choice_label" name="choice" id="chosen_num" value="{{ choice }}"> </p>
+                    <p class="choice_label" name="choice" id="chosen_num" value="{{ choice }}">{{ choice }}</p>
+                    <input type="hidden" id="hidden_choice" name="hidden_choice" value="{{ choice }}">
                     <input class="rul_bet" id="rul_bet" type="text" value="{{ bet }}" name="bet">
                     <input class="rul_play" type="submit" value="BET"><br>
                 </form>
@@ -159,9 +161,11 @@
 function printChoice(number) {
   var x = document.getElementById("chosen_num");
   x.innerHTML = number;
+  var y = document.getElementById("hidden_choice");
+  y.value = number;
 }
 function changeValue(){
- document.getElementById('rul_bet').value= "55";
+ // TODO
 }
 // Get the modal
 var modal = document.getElementById("modal");

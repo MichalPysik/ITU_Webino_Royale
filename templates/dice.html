@@ -7,6 +7,13 @@
 </head>
 
 <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+            <h2 style="background: rgba(255,0,0,1); color: black; text-align: center;">! {{ message }} !</h2>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}
 <div class="user_bar">
     <p class="user_bar_half">USER: {{ user }}</p>
     <p class="user_bar_half">BALANCE: {{ balance }}</p>

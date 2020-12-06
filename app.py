@@ -102,7 +102,12 @@ def Dice():
             return redirect('/casino/lose')
         bet = int(request.form['bet'])
         NoD = int(request.form['nOfDice'])
-        gStatus, pSum, eSum, pThws, eThws = dice(us, bet, NoD)
+        if bet >= 1 and bet <= 100000 and us.get_balance() >= bet:
+            gStatus, pSum, eSum, pThws, eThws = dice(us, bet, NoD)
+        elif bet >= 1 and bet <= 100000:
+            flash("You cannot bet more credits than you currently have")
+        else:
+            flash("You can only bet 1 up to 100 000 credits at once")
     for i in range (0, NoD):
         helpTMP.append(i)
     strP="/static/SKINS/DICE/" + str(pThws[NoD-1]) + "yellow.png"
